@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://c2g56anbga3p8"]
+
+[node name="scnLoadingScreen" type="Node2D"]
