@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doxa0m7x4oy7e"
-path="res://.godot/imported/car2.png-230d91c03ef743c9414807485f1e2bec.ctex"
+uid="uid://c4d53unr0op8n"
+path="res://.godot/imported/vladivostok_dump.png-ac7430590c5bdc461293ed906f4eac8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://car2.png"
-dest_files=["res://.godot/imported/car2.png-230d91c03ef743c9414807485f1e2bec.ctex"]
+source_file="res://sprites/vladivostok_dump.png"
+dest_files=["res://.godot/imported/vladivostok_dump.png-ac7430590c5bdc461293ed906f4eac8e.ctex"]
 
 [params]
 

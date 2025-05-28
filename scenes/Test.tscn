@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhfygtmbtlknb"]
+[gd_scene load_steps=7 format=3 uid="uid://bcmfv713lbrej"]
 
-[ext_resource type="Script" uid="uid://brc0vfc4ubv2o" path="res://player.gd" id="1_8tn2x"]
-[ext_resource type="Texture2D" path="res://car2.png" id="1_njov2"]
-[ext_resource type="Texture2D" path="res://vladivostok_dump.png" id="2_8tn2x"]
-[ext_resource type="Script" uid="uid://bxlghkin3ox6p" path="res://bot.gd" id="3_aq4fw"]
+[ext_resource type="Script" uid="uid://bb4hqja8ftgoq" path="res://player.gd" id="1_8tn2x"]
+[ext_resource type="Texture2D" uid="uid://doxa0m7x4oy7e" path="res://car2.png" id="1_njov2"]
+[ext_resource type="Texture2D" uid="uid://c4d53unr0op8n" path="res://vladivostok_dump.png" id="2_8tn2x"]
+[ext_resource type="Script" uid="uid://2likh6e5jjpq" path="res://bot.gd" id="3_aq4fw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq4fw"]
 size = Vector2(48, 97)

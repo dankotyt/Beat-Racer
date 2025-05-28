@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Управление поворотом (масса влияет на скорость поворота)
 	if abs(turn_input) > 0.1 and abs(current_speed) > 10:
-		target_rotation = initial_rotation + deg_to_rad(turn_input * 45.0)  # Макс 20 градусов
+		target_rotation = initial_rotation + deg_to_rad(turn_input * 60.0)  # Макс 20 градусов
 	else:
 		target_rotation = initial_rotation
 	
