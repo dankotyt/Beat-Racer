@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcmfv713lbrej"]
+
+[ext_resource type="Script" uid="uid://bb4hqja8ftgoq" path="res://player.gd" id="1_8tn2x"]
+[ext_resource type="Texture2D" uid="uid://doxa0m7x4oy7e" path="res://car2.png" id="1_njov2"]
+[ext_resource type="Texture2D" uid="uid://c4d53unr0op8n" path="res://vladivostok_dump.png" id="2_8tn2x"]
+[ext_resource type="Script" uid="uid://2likh6e5jjpq" path="res://bot.gd" id="3_aq4fw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq4fw"]
+size = Vector2(48, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tn2x"]
+size = Vector2(53, 100.625)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(43, 0)
+
+[node name="Player (CharacterBody2D)" type="CharacterBody2D" parent="."]
+position = Vector2(306, 79)
+script = ExtResource("1_8tn2x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player (CharacterBody2D)"]
+position = Vector2(15, 28)
+scale = Vector2(0.807692, 0.73125)
+texture = ExtResource("2_8tn2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player (CharacterBody2D)"]
+position = Vector2(16, 28)
+shape = SubResource("RectangleShape2D_aq4fw")
+
+[node name="Camera2D" type="Camera2D" parent="Player (CharacterBody2D)"]
+position = Vector2(4, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="Bot (CharacterBody2D2)" type="CharacterBody2D" parent="."]
+position = Vector2(423, 101)
+script = ExtResource("3_aq4fw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Bot (CharacterBody2D2)"]
+position = Vector2(1.99999, 4)
+scale = Vector2(0.0166667, 0.0275)
+texture = ExtResource("1_njov2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bot (CharacterBody2D2)"]
+position = Vector2(6, 4.6875)
+shape = SubResource("RectangleShape2D_8tn2x")
