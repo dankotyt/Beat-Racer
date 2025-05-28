@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c04yxfklfphqx"]
+
+[ext_resource type="Texture2D" uid="uid://dfeogwbaehj3u" path="res://scenes/menu/assets/button_atlas_texture.tres" id="1_v0o4q"]
+[ext_resource type="Texture2D" uid="uid://cifwt5awi1j17" path="res://backgrounds/map/Buttons2.png" id="2_dc8fn"]
+[ext_resource type="Script" uid="uid://wh76tkerfyfb" path="res://scripts/menu/level_button.gd" id="3_3ah66"]
+[ext_resource type="FontFile" uid="uid://bawugr6al7e3r" path="res://fonts/Hyperwave.otf" id="4_otl3o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0o4q"]
+atlas = ExtResource("2_dc8fn")
+region = Rect2(16, 1, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pkhh"]
+atlas = ExtResource("2_dc8fn")
+region = Rect2(145, 1, 14, 14)
+
+[node name="LevelButton" type="TextureButton"]
+offset_left = 1.0
+offset_right = 118.0
+offset_bottom = 118.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("1_v0o4q")
+texture_pressed = SubResource("AtlasTexture_v0o4q")
+texture_disabled = SubResource("AtlasTexture_0pkhh")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_3ah66")
+locked = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 22.0
+offset_right = -11.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.217161, 0.265675, 0.369761, 1)
+theme_override_colors/font_outline_color = Color(0.258824, 0.313726, 0.431373, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("4_otl3o")
+theme_override_font_sizes/font_size = 144
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

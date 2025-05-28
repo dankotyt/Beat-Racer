@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://0ogg1ilrkd3h"]
+
+[ext_resource type="Texture2D" uid="uid://bcypwh13rcgyh" path="res://sprites/carOrange.png" id="1_7faph"]
+[ext_resource type="Texture2D" uid="uid://bf6ai206g8wye" path="res://sprites/carGreen.png" id="2_ci64k"]
+[ext_resource type="Texture2D" uid="uid://bpyx2np64yfux" path="res://sprites/carLightGreen.png" id="3_3l5i0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7faph"]
+atlas = ExtResource("1_7faph")
+region = Rect2(0, 0, 99, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w81on"]
+atlas = ExtResource("2_ci64k")
+region = Rect2(0, 0, 95, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p0f6"]
+atlas = ExtResource("3_3l5i0")
+region = Rect2(0, 0, 105, 40)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LightGreenCar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_right = 339.0
+offset_bottom = 42.0
+texture_normal = SubResource("AtlasTexture_7faph")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GreenCar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_right = 220.0
+offset_bottom = 42.0
+texture_normal = SubResource("AtlasTexture_w81on")
+
+[node name="OrangeCar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_1p0f6")

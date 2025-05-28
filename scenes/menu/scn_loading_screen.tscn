@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2g56anbga3p8"]
+
+[ext_resource type="Script" uid="uid://b2nhftaytrkui" path="res://scripts/menu/scn_loading_screen.gd" id="1_7pnr3"]
+[ext_resource type="FontFile" uid="uid://ck0m3vx2rki7e" path="res://fonts/Brushstrike trial.ttf" id="1_wpj6f"]
+
+[sub_resource type="Environment" id="Environment_7pnr3"]
+background_mode = 3
+glow_enabled = true
+glow_levels/1 = 16.0
+glow_levels/2 = 16.0
+glow_levels/3 = 16.0
+glow_levels/4 = 16.0
+glow_levels/5 = 16.0
+glow_levels/6 = 16.0
+glow_levels/7 = 16.0
+glow_normalized = true
+glow_intensity = 0.14
+glow_bloom = 0.14
+glow_blend_mode = 0
+
+[sub_resource type="Animation" id="Animation_6j4tp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2wrxl"]
+resource_name = "loading_screen"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6cpm"]
+_data = {
+&"RESET": SubResource("Animation_6j4tp"),
+&"loading_screen": SubResource("Animation_2wrxl")
+}
+
+[node name="scnLoadingScreen" type="Node2D"]
+script = ExtResource("1_7pnr3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 143.0
+offset_top = 278.0
+offset_right = 1058.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("1_wpj6f")
+theme_override_font_sizes/font_size = 100
+text = "bodrost` presents "
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7pnr3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="loading_screen" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m6cpm")
+}
+autoplay = "loading_screen"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)

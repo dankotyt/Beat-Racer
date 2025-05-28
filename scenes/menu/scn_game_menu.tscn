@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://brkedbwayydhn"]
+
+[ext_resource type="Script" uid="uid://btu22v45sve5s" path="res://scripts/menu/scn_game_menu.gd" id="1_0q047"]
+[ext_resource type="FontFile" uid="uid://ck0m3vx2rki7e" path="res://fonts/Brushstrike trial.ttf" id="2_0s7p7"]
+[ext_resource type="Texture2D" uid="uid://c83652wanh5v" path="res://backgrounds/map/FrameMap.png" id="3_nh0tm"]
+[ext_resource type="Theme" uid="uid://bamnid75dcvpd" path="res://backgrounds/themes/default_button.tres" id="5_wsysb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3w5le"]
+texture = ExtResource("3_nh0tm")
+region_rect = Rect2(1, 164, 94, 88)
+modulate_color = Color(0.800491, 0.800491, 0.800491, 1)
+
+[node name="scnGameMenu" type="Node2D"]
+script = ExtResource("1_0q047")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 397.0
+offset_top = 102.0
+offset_right = 764.0
+offset_bottom = 150.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("2_0s7p7")
+theme_override_font_sizes/font_size = 72
+text = "beat racer"
+
+[node name="BGButtons" type="Panel" parent="."]
+offset_left = 418.0
+offset_top = 193.0
+offset_right = 736.0
+offset_bottom = 486.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3w5le")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 447.0
+offset_top = 228.0
+offset_right = 707.0
+offset_bottom = 457.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 7
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_wsysb")
+theme_override_fonts/font = ExtResource("2_0s7p7")
+theme_override_font_sizes/font_size = 48
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_wsysb")
+theme_override_fonts/font = ExtResource("2_0s7p7")
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_wsysb")
+theme_override_fonts/font = ExtResource("2_0s7p7")
+theme_override_font_sizes/font_size = 48
+text = "Exit
+"

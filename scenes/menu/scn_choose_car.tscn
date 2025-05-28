@@ -1,0 +1,172 @@
+[gd_scene load_steps=17 format=3 uid="uid://b4t42jqllp8qa"]
+
+[ext_resource type="Script" uid="uid://cr0hkpn3qw5w1" path="res://scripts/menu/scn_choose_car.gd" id="1_qwuey"]
+[ext_resource type="FontFile" uid="uid://ck0m3vx2rki7e" path="res://fonts/Brushstrike trial.ttf" id="2_evfw2"]
+[ext_resource type="Texture2D" uid="uid://c83652wanh5v" path="res://backgrounds/map/FrameMap.png" id="3_nqtou"]
+[ext_resource type="Theme" uid="uid://bamnid75dcvpd" path="res://backgrounds/themes/default_button.tres" id="4_meye8"]
+[ext_resource type="Texture2D" uid="uid://d1ddm6wfyo0sc" path="res://scenes/menu/assets/backNext_atlas_texture.tres" id="5_ji1u7"]
+[ext_resource type="Texture2D" uid="uid://bfx0eh7d2v4pn" path="res://backgrounds/map/GUI.png" id="6_3adbf"]
+[ext_resource type="Texture2D" uid="uid://bcypwh13rcgyh" path="res://sprites/carOrange.png" id="6_meye8"]
+[ext_resource type="Texture2D" uid="uid://bpyx2np64yfux" path="res://sprites/carLightGreen.png" id="7_ji1u7"]
+[ext_resource type="Texture2D" uid="uid://bf6ai206g8wye" path="res://sprites/carGreen.png" id="8_3adbf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsxuo"]
+texture = ExtResource("3_nqtou")
+region_rect = Rect2(1, 164, 94, 88)
+modulate_color = Color(0.800491, 0.800491, 0.800491, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_meye8"]
+atlas = ExtResource("6_3adbf")
+region = Rect2(66, 242, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ylnm"]
+atlas = ExtResource("6_3adbf")
+region = Rect2(129, 241, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji1u7"]
+atlas = ExtResource("6_3adbf")
+region = Rect2(130, 242, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsxuo"]
+atlas = ExtResource("6_meye8")
+region = Rect2(0, 0, 99, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvfas"]
+atlas = ExtResource("7_ji1u7")
+region = Rect2(0, 0, 105, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaell"]
+atlas = ExtResource("8_3adbf")
+region = Rect2(0, 0, 95, 42)
+
+[node name="scnChooseCar" type="Node2D"]
+script = ExtResource("1_qwuey")
+
+[node name="ChooseLevel" type="Label" parent="."]
+offset_left = 352.0
+offset_top = 48.0
+offset_right = 774.0
+offset_bottom = 96.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("2_evfw2")
+theme_override_font_sizes/font_size = 72
+text = "choose car"
+metadata/_edit_use_anchors_ = true
+
+[node name="BGButtons" type="Panel" parent="."]
+offset_left = 247.0
+offset_top = 120.0
+offset_right = 888.0
+offset_bottom = 551.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vsxuo")
+metadata/_edit_use_anchors_ = true
+
+[node name="BackToLevelButton" type="Button" parent="BGButtons"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.5
+offset_top = -110.0
+offset_right = 107.5
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme = ExtResource("4_meye8")
+theme_override_fonts/font = ExtResource("2_evfw2")
+theme_override_font_sizes/font_size = 48
+text = "back
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="BackButton" type="TextureButton" parent="BGButtons"]
+custom_minimum_size = Vector2(87, 83)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -39.5
+offset_right = 46.0
+offset_bottom = 42.5
+grow_vertical = 2
+texture_normal = ExtResource("5_ji1u7")
+texture_pressed = SubResource("AtlasTexture_meye8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="NextButton" type="TextureButton" parent="BGButtons"]
+custom_minimum_size = Vector2(87, 83)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -42.0
+offset_right = 42.0
+offset_bottom = 41.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_8ylnm")
+texture_pressed = SubResource("AtlasTexture_ji1u7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ClipControl" type="Control" parent="BGButtons"]
+layout_mode = 1
+anchor_left = 0.101
+anchor_top = 0.248
+anchor_right = 0.908
+anchor_bottom = 0.689
+offset_left = 0.258995
+offset_top = 0.111992
+offset_right = -0.0280151
+offset_bottom = 0.0409851
+
+[node name="OrangeCar" type="TextureButton" parent="BGButtons/ClipControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 1.0
+offset_right = -28.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_vsxuo")
+stretch_mode = 5
+
+[node name="LightGreenCar" type="TextureButton" parent="BGButtons/ClipControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_xvfas")
+stretch_mode = 5
+
+[node name="GreenCar" type="TextureButton" parent="BGButtons/ClipControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -1.0
+offset_right = -43.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_yaell")
+stretch_mode = 5
+
+[connection signal="pressed" from="BGButtons/BackToLevelButton" to="." method="_on_back_to_level_button_pressed"]
