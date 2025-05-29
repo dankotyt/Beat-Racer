@@ -1,8 +1,14 @@
 extends Node
 
+static var instance: AudioManager
+
 var music_player: AudioStreamPlayer
 var is_music_playing := false
 var current_volume: float = 0.1
+
+func _init():
+	instance = self
+	setup_music()
 
 # Загружаем музыку, но не воспроизводим сразу
 func setup_music():

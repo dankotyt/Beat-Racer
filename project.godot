@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 AudioManager="*res://scripts/menu/AudioManager.gd"
 Bg="*res://backgrounds/bg.tscn"
 ProgressManager="*res://scripts/menu/ProgressManager.gd"
+Command="*res://scripts/menu/Command.gd"
 
 [display]
 
