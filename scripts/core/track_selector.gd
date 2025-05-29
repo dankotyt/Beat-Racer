@@ -1,11 +1,22 @@
 class_name TrackSelector
 extends RefCounted
 
-class TrackSelectionStrategy:
-	func select_track(tracks: Array) -> String: return ""
+# Паттерн "Стратегия"
+class TrackSelectionStrategy extends RefCounted:
+	func select_track(tracks: Array) -> String: 
+		return ""
 
 class RandomStrategy extends TrackSelectionStrategy:
-	func select_track(tracks: Array) -> String: return tracks.pick_random()
+	func select_track(tracks: Array) -> String: 
+		return tracks.pick_random()
 
+class FirstTrackStrategy extends TrackSelectionStrategy:
+	func select_track(tracks: Array) -> String:
+		return tracks[0] if tracks.size() > 0 else ""
+
+# Фабричный метод создания стратегий
 static func create_strategy(mode: String) -> TrackSelectionStrategy:
-	return RandomStrategy.new() if mode == "random" else null
+	match mode:
+		"random": return RandomStrategy.new()
+		"first": return FirstTrackStrategy.new()
+		_: return null
