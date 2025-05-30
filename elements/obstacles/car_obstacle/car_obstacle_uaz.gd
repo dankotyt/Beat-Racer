@@ -1,4 +1,3 @@
-# elements/obstacles/spikes_obstacle/spikes_obstacle.gd
 extends Area2D
 
 var speed := 400.0
