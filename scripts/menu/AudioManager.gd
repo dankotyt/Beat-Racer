@@ -4,7 +4,7 @@ static var instance: AudioManager
 
 var music_player: AudioStreamPlayer
 var is_music_playing := false
-var current_volume: float = 0.1
+var current_volume: float = 0.05
 
 func _init():
 	instance = self

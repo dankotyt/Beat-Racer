@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b4t42jqllp8qa"]
+[gd_scene load_steps=16 format=3 uid="uid://b4t42jqllp8qa"]
 
 [ext_resource type="Script" uid="uid://cr0hkpn3qw5w1" path="res://scripts/menu/scn_choose_car.gd" id="1_qwuey"]
 [ext_resource type="FontFile" uid="uid://ck0m3vx2rki7e" path="res://fonts/Brushstrike trial.ttf" id="2_evfw2"]
@@ -6,9 +6,9 @@
 [ext_resource type="Theme" uid="uid://bamnid75dcvpd" path="res://backgrounds/themes/default_button.tres" id="4_meye8"]
 [ext_resource type="Texture2D" uid="uid://d1ddm6wfyo0sc" path="res://scenes/menu/assets/backNext_atlas_texture.tres" id="5_ji1u7"]
 [ext_resource type="Texture2D" uid="uid://bfx0eh7d2v4pn" path="res://backgrounds/map/GUI.png" id="6_3adbf"]
-[ext_resource type="Texture2D" uid="uid://bcypwh13rcgyh" path="res://sprites/carOrange.png" id="6_meye8"]
-[ext_resource type="Texture2D" uid="uid://bpyx2np64yfux" path="res://sprites/carLightGreen.png" id="7_ji1u7"]
-[ext_resource type="Texture2D" uid="uid://bf6ai206g8wye" path="res://sprites/carGreen.png" id="8_3adbf"]
+[ext_resource type="Texture2D" uid="uid://bmnr516uhru8x" path="res://sprites/carOrangeGor.png" id="7_meye8"]
+[ext_resource type="Texture2D" uid="uid://ju0g4pqdrfn5" path="res://sprites/carLightGreenGor.png" id="8_ji1u7"]
+[ext_resource type="Texture2D" uid="uid://cyi1hwek4wt77" path="res://sprites/carGreenGor.png" id="9_3adbf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsxuo"]
 texture = ExtResource("3_nqtou")
@@ -27,16 +27,12 @@ region = Rect2(129, 241, 14, 14)
 atlas = ExtResource("6_3adbf")
 region = Rect2(130, 242, 12, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vsxuo"]
-atlas = ExtResource("6_meye8")
-region = Rect2(0, 0, 99, 42)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvfas"]
-atlas = ExtResource("7_ji1u7")
+atlas = ExtResource("8_ji1u7")
 region = Rect2(0, 0, 105, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yaell"]
-atlas = ExtResource("8_3adbf")
+atlas = ExtResource("9_3adbf")
 region = Rect2(0, 0, 95, 42)
 
 [node name="scnChooseCar" type="Node2D"]
@@ -140,7 +136,7 @@ offset_right = -9.0
 offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_vsxuo")
+texture_normal = ExtResource("7_meye8")
 stretch_mode = 5
 
 [node name="LightGreenCar" type="TextureButton" parent="BGButtons/ClipControl"]

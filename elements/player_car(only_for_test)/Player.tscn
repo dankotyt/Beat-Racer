@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://1avvvb6ttod6"]
 
 [ext_resource type="Script" uid="uid://dnkbo82726rtk" path="res://elements/player_car(only_for_test)/player.gd" id="1_o2sf4"]
-[ext_resource type="Texture2D" uid="uid://bnesoq8eqcbmh" path="res://assets/player_test.png" id="1_o51ha"]
+[ext_resource type="Texture2D" uid="uid://bf6ai206g8wye" path="res://sprites/carGreen.png" id="2_3ifi1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsloy"]
-size = Vector2(54.2222, 143.111)
+size = Vector2(54.2222, 131.111)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ifi1"]
 
@@ -30,13 +30,13 @@ script = ExtResource("1_o2sf4")
 
 [node name="Player3" type="Sprite2D" parent="."]
 texture_repeat = 3
-scale = Vector2(5, 5)
-texture = ExtResource("1_o51ha")
-region_enabled = true
+position = Vector2(7.91667, -1.33928)
+scale = Vector2(6.13095, 6.08766)
+texture = ExtResource("2_3ifi1")
 region_rect = Rect2(0, 0, 50, 130)
 
 [node name="Player" type="CollisionShape2D" parent="."]
-position = Vector2(8, -3.99999)
+position = Vector2(6.66667, -4.99999)
 scale = Vector2(4.5, 4.5)
 shape = SubResource("RectangleShape2D_gsloy")
 

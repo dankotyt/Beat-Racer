@@ -89,9 +89,9 @@ offset_bottom = 903.0
 color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 175.0
+offset_left = 156.0
 offset_top = 400.0
-offset_right = 1364.0
+offset_right = 1345.0
 offset_bottom = 478.0
 theme_override_fonts/font = ExtResource("1_wpj6f")
 theme_override_font_sizes/font_size = 130

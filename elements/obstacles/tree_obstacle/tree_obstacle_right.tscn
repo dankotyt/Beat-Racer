@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkjabh6dcx20d" path="res://assets/tree_obstacle.png" id="1_sgias"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s4de6"]
-radius = 57.0789
+radius = 51.9199
 
 [node name="TreeObstacleRight" type="Area2D"]
 physics_interpolation_mode = 1

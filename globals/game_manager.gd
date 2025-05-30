@@ -8,7 +8,10 @@ enum GameState { PLAYING, GAME_OVER, WIN }
 var state: GameState = GameState.PLAYING
 var track_length: float = 65000.0  # длина трассы в пикселях
 var distance_traveled: float = 0.0
-var difficulty = "hard"  # "easy", "medium", "hard"
+var difficulty = "medium"  # "easy", "medium", "hard"
+
+func _ready():
+	print("GameManager ready, current difficulty:", difficulty)
 
 func show_lose_screen():
 		get_tree().change_scene_to_file("res://elements/screens/lose.tscn")

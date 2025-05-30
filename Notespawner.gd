@@ -9,6 +9,10 @@ func _ready():
 		push_error("No audio files found")
 		return
 
+	# Получаем имя файла без пути и расширения
+	var track_name = random_track.get_file().get_basename()
+	var beatmapfile = "beatmap_%s.json" % track_name
+
 	var audio_stream = load(random_track)
 	if audio_stream == null:
 		push_error("Failed to load audio file: " + random_track)
@@ -16,6 +20,7 @@ func _ready():
 
 	audio_player.stream = audio_stream
 	audio_player.play()
+	audio_player.volume_db = -10.0 
 
 	# Загрузка менеджера битмап
 	var beatmap_script = load("res://scripts/core/beatmap_manager.gd")
@@ -37,9 +42,9 @@ func _ready():
 	beatmap_manager.note_parent = self
 	beatmap_manager.audio_player = audio_player
 
-	beatmap_manager.start()
+	add_child(beatmap_manager)
+	beatmap_manager.start(beatmapfile)  # Передаем имя файла битмапа
 
-# Получение случайного трека из папки
 func get_random_track(path: String) -> String:
 	var dir = DirAccess.open(path)
 	if dir == null:

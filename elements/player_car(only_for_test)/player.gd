@@ -11,9 +11,21 @@ var current_lateral_speed: float = 0.0
 var initial_rotation: float = 0.0
 var target_rotation: float = 0.0  # Целевой угол для выравнивания
 
+@onready var sprite = $Player3  # Предполагая, что у вас есть Sprite2D для отображения машины
+
 func _ready():
 	initial_rotation = rotation
 	target_rotation = initial_rotation
+	load_car_texture()
+
+func load_car_texture():
+	# Загружаем текстуру из ProgressManager
+	var progress_manager = get_node("/root/ProgressManager")
+	if progress_manager and sprite:
+		print("Loading car texture from: ", progress_manager.current_car_texture)
+		var texture = load(progress_manager.current_car_texture)
+		if texture:
+			sprite.texture = texture
 
 func _physics_process(delta: float) -> void:
 	# Получаем ввод управления

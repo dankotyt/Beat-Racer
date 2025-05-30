@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvajhgkqysg7s"]
 
 [ext_resource type="Script" uid="uid://b7r0x3dpv53bp" path="res://elements/obstacles/Police_car_obstacle/police_car.gd" id="1_6hnu3"]
-[ext_resource type="Texture2D" uid="uid://62cy8rq8fqnv" path="res://assets/sprPoliceObstacle.png" id="2_hd0cl"]
+[ext_resource type="Texture2D" uid="uid://cu47c350su0gc" path="res://assets/sprPoliceObstacle.png" id="2_hd0cl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a0uf"]
 size = Vector2(106, 47)
