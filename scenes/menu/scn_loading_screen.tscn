@@ -83,24 +83,25 @@ _data = {
 script = ExtResource("1_7pnr3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1153.0
-offset_bottom = 649.0
+offset_top = -7.0
+offset_right = 1450.0
+offset_bottom = 903.0
 color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 143.0
-offset_top = 278.0
-offset_right = 1058.0
-offset_bottom = 352.0
+offset_left = 175.0
+offset_top = 400.0
+offset_right = 1364.0
+offset_bottom = 478.0
 theme_override_fonts/font = ExtResource("1_wpj6f")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 130
 text = "bodrost` presents "
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7pnr3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 324)
+position = Vector2(720, 449)
 
 [node name="loading_screen" type="AnimationPlayer" parent="."]
 libraries = {
@@ -109,4 +110,5 @@ libraries = {
 autoplay = "loading_screen"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(144, 125)
 color = Color(0, 0, 0, 1)

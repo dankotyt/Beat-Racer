@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://1avvvb6ttod6"]
+
+[ext_resource type="Script" uid="uid://dnkbo82726rtk" path="res://elements/player_car(only_for_test)/player.gd" id="1_o2sf4"]
+[ext_resource type="Texture2D" uid="uid://bnesoq8eqcbmh" path="res://assets/player_test.png" id="1_o51ha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsloy"]
+size = Vector2(33.3333, 84.6667)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ifi1"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6db3y"]
+lifetime_randomness = 0.45
+particle_flag_align_y = true
+particle_flag_disable_z = true
+gravity = Vector3(0, 400, 0)
+linear_accel_min = -100.0
+linear_accel_max = 32.0
+radial_accel_min = -100.0
+radial_accel_max = 44.6
+tangential_accel_min = -100.0
+tangential_accel_max = 100.0
+scale_min = 0.5
+scale_max = 4.0
+color = Color(0.509804, 0.52549, 0.521569, 1)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_mask = 2
+script = ExtResource("1_o2sf4")
+
+[node name="Player3" type="Sprite2D" parent="."]
+texture_repeat = 3
+scale = Vector2(3, 3)
+texture = ExtResource("1_o51ha")
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 130)
+
+[node name="Player" type="CollisionShape2D" parent="."]
+position = Vector2(-2.86102e-06, 3.5)
+scale = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_gsloy")
+
+[node name="smoke_effect" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_3ifi1")
+position = Vector2(38, 196)
+amount = 50
+lifetime = 0.33
+speed_scale = 64.0
+fixed_fps = 120
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_6db3y")
+
+[node name="smoke_effect2" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_3ifi1")
+position = Vector2(-40, 196)
+amount = 50
+lifetime = 0.33
+speed_scale = 64.0
+fixed_fps = 120
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_6db3y")

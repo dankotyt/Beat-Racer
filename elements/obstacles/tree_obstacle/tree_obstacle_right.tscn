@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7tmgw1hqxhng"]
+
+[ext_resource type="Script" uid="uid://c0qx32vri8ln8" path="res://elements/obstacles/tree_obstacle/tree_obstacle_right.gd" id="1_s4de6"]
+[ext_resource type="Texture2D" uid="uid://dkjabh6dcx20d" path="res://assets/tree_obstacle.png" id="1_sgias"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4de6"]
+radius = 42.0119
+
+[node name="TreeObstacleRight" type="Area2D"]
+physics_interpolation_mode = 1
+scale = Vector2(4, 4)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_s4de6")
+
+[node name="tree" type="Sprite2D" parent="."]
+position = Vector2(41, 1)
+rotation = -1.5708
+scale = Vector2(0.031, 0.031)
+texture = ExtResource("1_sgias")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+physics_interpolation_mode = 1
+position = Vector2(41, 1)
+shape = SubResource("CircleShape2D_s4de6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

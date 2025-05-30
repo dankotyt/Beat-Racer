@@ -24,6 +24,8 @@ Command="*res://scripts/menu/Command.gd"
 
 [display]
 
+window/size/viewport_width=1440
+window/size/viewport_height=900
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://cgq7hyji7fcbw"
 

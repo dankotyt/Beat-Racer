@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5q5v056cycum"]
+
+[ext_resource type="Script" uid="uid://chau8xpbwra04" path="res://elements/screens/lose.gd" id="1_hitnn"]
+[ext_resource type="Texture2D" uid="uid://jgpie5ugp3b4" path="res://assets/lose.jpeg" id="1_uikxo"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_hitnn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_uikxo")
+region_enabled = true
+region_rect = Rect2(-330, -200, 1920, 1080)
