@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp0v2dfqll5d3"]
+
+[ext_resource type="Texture2D" uid="uid://c83652wanh5v" path="res://backgrounds/map/FrameMap.png" id="1_npm7y"]
+[ext_resource type="Script" uid="uid://b2lcdelpig0qe" path="res://scripts/menu/scn_level.gd" id="1_umohe"]
+[ext_resource type="PackedScene" uid="uid://c04yxfklfphqx" path="res://scenes/menu/button_for_level.tscn" id="2_6g22x"]
+[ext_resource type="Script" uid="uid://bov00qa5w70ia" path="res://scripts/menu/clip_control.gd" id="3_oh1xo"]
+[ext_resource type="Theme" uid="uid://bamnid75dcvpd" path="res://backgrounds/themes/default_button.tres" id="3_umohe"]
+[ext_resource type="FontFile" uid="uid://ck0m3vx2rki7e" path="res://fonts/Brushstrike trial.ttf" id="5_2bowj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgj17"]
+texture = ExtResource("1_npm7y")
+region_rect = Rect2(1, 164, 94, 88)
+modulate_color = Color(0.800491, 0.800491, 0.800491, 1)
+
+[node name="scnLevel" type="Node2D"]
+script = ExtResource("1_umohe")
+
+[node name="ChooseLevel" type="Label" parent="."]
+offset_left = 355.0
+offset_top = 91.0
+offset_right = 1119.0
+offset_bottom = 169.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("5_2bowj")
+theme_override_font_sizes/font_size = 130
+text = "choose level"
+
+[node name="BGButtons" type="Panel" parent="."]
+offset_left = 361.0
+offset_top = 233.0
+offset_right = 1095.0
+offset_bottom = 727.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_sgj17")
+
+[node name="BackButton" type="Button" parent="BGButtons"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -126.0
+offset_right = 129.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme = ExtResource("3_umohe")
+theme_override_fonts/font = ExtResource("5_2bowj")
+theme_override_font_sizes/font_size = 72
+text = "back
+"
+
+[node name="ClipControl" type="Control" parent="BGButtons"]
+layout_mode = 1
+anchor_left = 0.069
+anchor_top = 0.234
+anchor_right = 0.936
+anchor_bottom = 0.733
+offset_left = -0.229
+offset_top = 0.146004
+offset_right = 0.0239868
+offset_bottom = 0.145966
+script = ExtResource("3_oh1xo")
+
+[node name="GridContainer" type="GridContainer" parent="BGButtons/ClipControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 37.0
+offset_right = -2.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="LevelButton" parent="BGButtons/ClipControl/GridContainer" instance=ExtResource("2_6g22x")]
+layout_mode = 2
+
+[node name="LevelButton2" parent="BGButtons/ClipControl/GridContainer" instance=ExtResource("2_6g22x")]
+layout_mode = 2
+disabled = true
+level_num = 2
+locked = true
+
+[node name="LevelButton3" parent="BGButtons/ClipControl/GridContainer" instance=ExtResource("2_6g22x")]
+layout_mode = 2
+disabled = true
+level_num = 3
+locked = true
+
+[connection signal="pressed" from="BGButtons/BackButton" to="." method="_on_back_button_pressed"]
