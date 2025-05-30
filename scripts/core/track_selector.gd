@@ -1,7 +1,7 @@
 class_name TrackSelector
 extends RefCounted
 
-# Паттерн "Стратегия"
+# Стратегия
 class TrackSelectionStrategy extends RefCounted:
 	func select_track(tracks: Array) -> String: 
 		return ""
@@ -14,7 +14,6 @@ class FirstTrackStrategy extends TrackSelectionStrategy:
 	func select_track(tracks: Array) -> String:
 		return tracks[0] if tracks.size() > 0 else ""
 
-# Фабричный метод создания стратегий
 static func create_strategy(mode: String) -> TrackSelectionStrategy:
 	match mode:
 		"random": return RandomStrategy.new()
