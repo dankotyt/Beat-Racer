@@ -1,4 +1,3 @@
-# game/bg_movement_script.gd
 extends Node2D
 
 var scroll_speed: float = -500.0
@@ -28,5 +27,4 @@ func spawn_finish_line():
 	var finish_line_scene = preload("res://elements/finish_line/finish_line.tscn")
 	var finish_line = finish_line_scene.instantiate()
 	get_tree().current_scene.add_child(finish_line)
-	# Появляется сверху по центру
 	finish_line.position = Vector2(0, -100)
