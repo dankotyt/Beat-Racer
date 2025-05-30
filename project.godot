@@ -14,6 +14,8 @@ config/name="DankoRacer"
 run/main_scene="uid://c2g56anbga3p8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+run/size/viewport_height=648
+run/size/viewport_width=1152
 
 [autoload]
 
@@ -21,6 +23,7 @@ AudioManager="*res://scripts/menu/AudioManager.gd"
 Bg="*res://backgrounds/bg.tscn"
 ProgressManager="*res://scripts/menu/ProgressManager.gd"
 Command="*res://scripts/menu/Command.gd"
+GameManager="*res://globals/game_manager.gd"
 
 [display]
 
@@ -28,6 +31,7 @@ window/size/viewport_width=1440
 window/size/viewport_height=900
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://cgq7hyji7fcbw"
+<<<<<<<HEADwindow/size/viewport_width=1440
 
 [rendering]
 

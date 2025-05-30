@@ -4,23 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://dkjabh6dcx20d" path="res://assets/tree_obstacle.png" id="1_qcmxr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_41f0x"]
-radius = 44.25
-height = 88.5
+radius = 51.0
+height = 102.0
 
 [node name="tree_obstacle" type="Area2D"]
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_3yk0b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(46, -5.96046e-08)
+position = Vector2(60.5056, 11.1097)
 rotation = 1.57152
-scale = Vector2(0.0309733, 0.0326549)
+scale = Vector2(0.0412981, 0.0422191)
 texture = ExtResource("1_qcmxr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(48, -1)
+position = Vector2(60, 11.75)
 shape = SubResource("CapsuleShape2D_41f0x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

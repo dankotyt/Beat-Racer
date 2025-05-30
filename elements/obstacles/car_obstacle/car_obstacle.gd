@@ -29,3 +29,7 @@ func _on_body_entered(body):
 		if body.name == "Player":
 				GameManager.state = GameManager.GameState.GAME_OVER
 				GameManager.emit_signal("game_over")
+
+
+func _on_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

@@ -1,15 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://fuxij7wil75c"]
+[gd_scene load_steps=13 format=3 uid="uid://fuxij7wil75c"]
 
 [ext_resource type="Script" uid="uid://b243qq7nkoy6s" path="res://game/bg_movement_script.gd" id="1_dakft"]
-[ext_resource type="Texture2D" uid="uid://druxuukxxh88" path="res://assets/pavement_tile.png" id="1_vasa2"]
-[ext_resource type="Texture2D" uid="uid://dm1ympe66ud1u" path="res://assets/grass_tile.png" id="2_h7iqs"]
-[ext_resource type="Texture2D" uid="uid://clu7xb7crg4i" path="res://assets/pavement_tile_middle.png" id="3_4fuuu"]
+[ext_resource type="Texture2D" uid="uid://b8q0fp2setqvu" path="res://assets/sprTileGrass.png" id="2_3vho3"]
+[ext_resource type="Texture2D" uid="uid://dluc5h3lbm21y" path="res://assets/sprTileAsphaltDefault.png" id="3_qf6n1"]
 [ext_resource type="PackedScene" uid="uid://1avvvb6ttod6" path="res://elements/player_car(only_for_test)/Player.tscn" id="4_dxrkv"]
+[ext_resource type="Texture2D" uid="uid://bskfyrs5h3iwj" path="res://assets/sprTileAsphaltLeft.png" id="4_vsp63"]
+[ext_resource type="Texture2D" uid="uid://cyewflbjmuds3" path="res://assets/sprTileAsphaltMiddle.png" id="5_b686c"]
 [ext_resource type="PackedScene" uid="uid://cnyc7xo8nlxyp" path="res://elements/Wall/wall.tscn" id="5_dakft"]
+[ext_resource type="Texture2D" uid="uid://bailmh0s6knjp" path="res://assets/sprTileAsphaltRight.png" id="6_hb504"]
 [ext_resource type="Script" uid="uid://cb0h0b7y85ey5" path="res://elements/player_car(only_for_test)/Car.gd" id="6_l8g03"]
 [ext_resource type="Script" uid="uid://bury463i8sk50" path="res://game/hud.gd" id="7_u5opy"]
 [ext_resource type="Script" uid="uid://6u1cp7odi1aj" path="res://game/obstacle_spawner.gd" id="8_y36n6"]
-[ext_resource type="PackedScene" uid="uid://b7dtqqwm3ja87" path="res://NoteSpawner.tscn" id="10_j8tme"]
+[ext_resource type="PackedScene" path="res://NoteSpawner.tscn" id="10_j8tme"]
 
 [node name="game" type="Node2D"]
 texture_filter = 3
@@ -17,49 +19,70 @@ texture_filter = 3
 [node name="bg_movement_script" type="Node2D" parent="."]
 script = ExtResource("1_dakft")
 
-[node name="background_asphalt" type="Sprite2D" parent="bg_movement_script"]
-texture_filter = 3
-texture_repeat = 2
-position = Vector2(960, 540)
-texture = ExtResource("1_vasa2")
-region_enabled = true
-region_rect = Rect2(0, 0, 1920, 1080)
-
 [node name="background_grass_left" type="Sprite2D" parent="bg_movement_script"]
 texture_repeat = 2
-position = Vector2(127.5, 540)
-texture = ExtResource("2_h7iqs")
+position = Vector2(63.5, 450)
+texture = ExtResource("2_3vho3")
 region_enabled = true
-region_rect = Rect2(0, 11.625, 255, 1080)
+region_rect = Rect2(400, 11.625, 127, 900)
 
 [node name="background_grass_right" type="Sprite2D" parent="bg_movement_script"]
 texture_repeat = 2
-position = Vector2(1792.5, 540)
-texture = ExtResource("2_h7iqs")
+position = Vector2(1376.5, 450)
+texture = ExtResource("2_3vho3")
 region_enabled = true
-region_rect = Rect2(50, 13, 255, 1080)
+region_rect = Rect2(50, 13, 127, 900)
 
-[node name="background_middle" type="Sprite2D" parent="bg_movement_script"]
-visibility_layer = 512
+[node name="asphalt defolt" type="Sprite2D" parent="bg_movement_script"]
 texture_repeat = 2
-position = Vector2(960, 540)
-texture = ExtResource("3_4fuuu")
+position = Vector2(720, 450)
+texture = ExtResource("3_qf6n1")
 region_enabled = true
-region_rect = Rect2(0, 0, 1410, 1080)
+region_rect = Rect2(0, 0, 930, 900)
+
+[node name="asphalt_left" type="Sprite2D" parent="bg_movement_script"]
+texture_repeat = 2
+position = Vector2(190.75, 450)
+scale = Vector2(1.00391, 1)
+texture = ExtResource("4_vsp63")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 900)
+
+[node name="asphalt_left2" type="Sprite2D" parent="bg_movement_script"]
+texture_repeat = 2
+position = Vector2(924, 450)
+texture = ExtResource("5_b686c")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 900)
+
+[node name="asphalt_left4" type="Sprite2D" parent="bg_movement_script"]
+texture_repeat = 2
+position = Vector2(499, 450)
+texture = ExtResource("5_b686c")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 900)
+
+[node name="asphalt_right" type="Sprite2D" parent="bg_movement_script"]
+texture_repeat = 2
+position = Vector2(1249.3, 450)
+texture = ExtResource("6_hb504")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 900)
 
 [node name="Player" parent="." instance=ExtResource("4_dxrkv")]
-position = Vector2(905, 931)
+position = Vector2(749, 714)
 collision_mask = 6
 script = ExtResource("6_l8g03")
 max_speed = 800.0
+lateral_speed = 400.0
 
 [node name="Wall" parent="." instance=ExtResource("5_dakft")]
-position = Vector2(101, -6)
+position = Vector2(-27, -16)
 scale = Vector2(4.5, 4.5)
 collision_layer = 4
 
 [node name="Wall2" parent="." instance=ExtResource("5_dakft")]
-position = Vector2(1602, 39)
+position = Vector2(1254, -110)
 scale = Vector2(4.5, 4.5)
 
 [node name="Wall3" parent="." instance=ExtResource("5_dakft")]
@@ -69,7 +92,7 @@ scale = Vector2(4.52074, 11.11)
 collision_layer = 4
 
 [node name="Wall4" parent="." instance=ExtResource("5_dakft")]
-position = Vector2(2231, 1015)
+position = Vector2(2183, 842)
 rotation = 1.5708
 scale = Vector2(4.52074, 11.11)
 collision_layer = 4

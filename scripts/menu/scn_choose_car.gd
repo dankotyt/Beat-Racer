@@ -14,8 +14,17 @@ func _ready():
 	$BGButtons/NextButton.connect("pressed", Callable(self, "_on_next_button_pressed"))
 	$BGButtons/BackButton.connect("pressed", Callable(self, "_on_back_button_pressed"))
 	
+	for car in cars:
+		if car is TextureButton:  # Если машины являются кнопками
+			car.connect("pressed", Callable(self, "_on_car_pressed").bind(car))
+	
 	# Изначально показываем только первую машину
 	update_car_visibility()
+func _on_car_pressed(car: Node):
+	# Сохраняем выбранную машину
+	save_selected_car()
+	# Переходим на следующую сцену
+	get_tree().change_scene_to_file("res://game/game.tscn")
 
 func update_car_visibility():
 	# Сначала скрываем все машины
@@ -49,13 +58,12 @@ func save_selected_car():
 	# Определяем имя выбранной машины
 	var car_name = ""
 	match current_car_index:
-		0: car_name = "OrangeCar"
-		1: car_name = "GreenCar"
-		2: car_name = "LightGreenCar"
+		0: car_name = "Orange"
+		1: car_name = "Green"
+		2: car_name = "LightGreen"
 	
 	# Сохраняем в ProgressManager
-	ProgressManager.selected_car = car_name
-	ProgressManager.save_progress()
+	ProgressManager.set_car_texture(car_name)
 
 func _on_back_to_level_button_pressed():
 	# Возвращаемся к выбору уровня

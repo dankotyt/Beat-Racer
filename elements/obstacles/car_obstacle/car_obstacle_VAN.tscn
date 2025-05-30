@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bayvp47ruvh6u"]
+
+[ext_resource type="Script" uid="uid://buia8uriww0hb" path="res://elements/obstacles/car_obstacle/car_obstacle_Van.gd" id="1_egfn5"]
+[ext_resource type="Texture2D" uid="uid://b6lw4vtftmmhn" path="res://assets/sprVanObstacle.png" id="2_nhsam"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j025"]
+size = Vector2(147, 393)
+
+[node name="Area2D2" type="Area2D"]
+scale = Vector2(0.75, 0.75)
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_egfn5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(3, 3)
+texture = ExtResource("2_nhsam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 8.5)
+shape = SubResource("RectangleShape2D_1j025")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

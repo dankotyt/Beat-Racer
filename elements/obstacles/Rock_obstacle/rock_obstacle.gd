@@ -1,18 +1,12 @@
-# tree_obstacle.gd (используется для left и right)
+# elements/obstacles/spikes_obstacle/spikes_obstacle.gd
 extends Area2D
 
 var speed := 500.0
 
-func _ready():
-	# Принудительно установить нужную позицию по X
-		position.x = 935
-
 func _process(delta):
 	if GameManager.state != GameManager.GameState.PLAYING:
 		return
-
 	position.y += speed * delta
-
 	if position.y > 1500:
 		queue_free()
 

@@ -8,6 +8,8 @@ var selected_level: int = 1
 
 var available_cars := ["OrangeCar", "GreenCar", "LightGreenCar"]
 var selected_car: String = "OrangeCar"  # Машина по умолчанию
+var car_textures_path := "res://sprites/"  # Базовый путь к текстурам
+var current_car_texture: String = car_textures_path + "carOrange.png"  # Полный путь к текстуре
 
 func unlock_level(level: int):
 	if not level in unlocked_levels:
@@ -18,7 +20,8 @@ func save_progress():
 	var save_data = {
 		"unlocked_levels": unlocked_levels,
 		"level_scores": level_scores,
-		"selected_car": selected_car
+		"selected_car": selected_car,
+		"current_car_texture": current_car_texture  # Сохраняем текущий путь к текстуре
 	}
 	FileAccess.open("user://progress.save", FileAccess.WRITE).store_var(save_data)
 
@@ -28,3 +31,10 @@ func load_progress():
 		unlocked_levels = data["unlocked_levels"]
 		level_scores = data["level_scores"]
 		selected_car = data.get("selected_car", "OrangeCar")
+		current_car_texture = data.get("current_car_texture", car_textures_path + "carOrange.png")
+
+# Устанавливаем текстуру выбранной машины
+func set_car_texture(car_name: String):
+	selected_car = car_name
+	current_car_texture = car_textures_path + "car" + car_name + ".png"
+	save_progress()

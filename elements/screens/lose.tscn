@@ -1,13 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5q5v056cycum"]
+[gd_scene load_steps=5 format=3 uid="uid://c5q5v056cycum"]
 
 [ext_resource type="Script" uid="uid://chau8xpbwra04" path="res://elements/screens/lose.gd" id="1_hitnn"]
 [ext_resource type="Texture2D" uid="uid://jgpie5ugp3b4" path="res://assets/lose.jpeg" id="1_uikxo"]
+[ext_resource type="Theme" uid="uid://bamnid75dcvpd" path="res://backgrounds/themes/default_button.tres" id="3_54034"]
+[ext_resource type="FontFile" uid="uid://ck0m3vx2rki7e" path="res://fonts/Brushstrike trial.ttf" id="4_3m6yr"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_hitnn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
+position = Vector2(720.5, 452)
+scale = Vector2(0.750521, 0.837037)
 texture = ExtResource("1_uikxo")
 region_enabled = true
 region_rect = Rect2(-330, -200, 1920, 1080)
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 534.0
+offset_top = 694.0
+offset_right = 901.0
+offset_bottom = 821.0
+size_flags_vertical = 3
+theme = ExtResource("3_54034")
+theme_override_fonts/font = ExtResource("4_3m6yr")
+theme_override_font_sizes/font_size = 72
+text = "menu
+"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

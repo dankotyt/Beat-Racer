@@ -1,13 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://cueprt0pk1lpb"]
+[gd_scene load_steps=5 format=3 uid="uid://cueprt0pk1lpb"]
 
 [ext_resource type="Texture2D" uid="uid://bb6yj7jojciuu" path="res://assets/win.jpg" id="1_mi5yo"]
 [ext_resource type="Script" uid="uid://ce5l047vrhpsp" path="res://elements/screens/win_screen.gd" id="1_ncnj3"]
+[ext_resource type="Theme" uid="uid://bamnid75dcvpd" path="res://backgrounds/themes/default_button.tres" id="3_cdb7p"]
+[ext_resource type="FontFile" uid="uid://ck0m3vx2rki7e" path="res://fonts/Brushstrike trial.ttf" id="4_hoks2"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ncnj3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
+position = Vector2(723, 452.5)
+scale = Vector2(0.753125, 0.837963)
 texture = ExtResource("1_mi5yo")
 region_enabled = true
 region_rect = Rect2(-580, -350, 1920, 1080)
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 566.0
+offset_top = 720.0
+offset_right = 893.0
+offset_bottom = 833.0
+size_flags_vertical = 3
+theme = ExtResource("3_cdb7p")
+theme_override_fonts/font = ExtResource("4_hoks2")
+theme_override_font_sizes/font_size = 72
+text = "menu
+"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

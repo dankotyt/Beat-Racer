@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://mfp1vn77knnx"]
+
+[ext_resource type="Script" uid="uid://d126jh5ubohrr" path="res://elements/obstacles/car_obstacle/car_obstacle_uaz.gd" id="1_hvq0n"]
+[ext_resource type="Texture2D" uid="uid://bkvsxc48gq41o" path="res://assets/sprUAZObstacle.png" id="2_7t0gi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jiu1"]
+size = Vector2(127, 257)
+
+[node name="CarObstacle2" type="Area2D"]
+scale = Vector2(0.75, 0.75)
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_hvq0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(3, 3)
+texture = ExtResource("2_7t0gi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 11.5)
+shape = SubResource("RectangleShape2D_4jiu1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,7 +5,7 @@ var speed := 500.0
 
 func _ready():
 	# Принудительно установить нужную позицию по X
-		position.x = 270
+		position.x = 170
 
 
 func _process(delta):

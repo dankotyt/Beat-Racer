@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvajhgkqysg7s"]
+
+[ext_resource type="Script" uid="uid://b7r0x3dpv53bp" path="res://elements/obstacles/Police_car_obstacle/police_car.gd" id="1_6hnu3"]
+[ext_resource type="Texture2D" uid="uid://62cy8rq8fqnv" path="res://assets/sprPoliceObstacle.png" id="2_hd0cl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a0uf"]
+size = Vector2(106, 47)
+
+[node name="PoliceCar" type="Area2D"]
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_6hnu3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("2_hd0cl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_5a0uf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

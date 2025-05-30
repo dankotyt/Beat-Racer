@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var max_speed: float = 800.0
 @export var acceleration: float = 800.0
-@export var lateral_speed: float = 200.0
+@export var lateral_speed: float = 400.0
 @export var rotation_speed: float = 2.0          # Скорость поворота при движении
 @export var return_to_straight_speed: float = 3.0 # Скорость возврата к прямому положению
 

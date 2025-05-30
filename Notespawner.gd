@@ -18,7 +18,7 @@ func _ready():
 	audio_player.play()
 
 	# Загрузка менеджера битмап
-	var beatmap_script = load("res://scripts(sp)/core/beatmap_manager.gd")
+	var beatmap_script = load("res://scripts/core/beatmap_manager.gd")
 	if beatmap_script == null:
 		push_error("Failed to load beatmap_manager.gd")
 		return
@@ -28,7 +28,7 @@ func _ready():
 		push_error("Failed to create beatmap_manager instance")
 		return
 
-	var note_scene = preload("res://scenes(sp)/Note.tscn")
+	var note_scene = preload("res://scenes/Note.tscn")
 	if note_scene == null:
 		push_error("Failed to load Note scene")
 		return

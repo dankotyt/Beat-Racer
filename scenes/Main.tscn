@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3lmpjyct77ct"]
+[gd_scene load_steps=2 format=3 uid="uid://cvt6yt1sc3614"]
 
-[ext_resource type="Script" uid="uid://bggwpcmq32rak" path="res://scripts(sp)/Main.gd" id="1_elqb8"]
-[ext_resource type="Script" uid="uid://djkupvd4d86td" path="res://scripts(sp)/core/obstacle_pool.gd" id="2_rvslj"]
+[ext_resource type="Script" uid="uid://djkupvd4d86td" path="res://scripts/core/obstacle_pool.gd" id="2_rvslj"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_elqb8")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

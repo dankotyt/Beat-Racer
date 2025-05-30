@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnesoq8eqcbmh" path="res://assets/player_test.png" id="1_o51ha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsloy"]
-size = Vector2(33.3333, 84.6667)
+size = Vector2(54.2222, 143.111)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ifi1"]
 
@@ -24,25 +24,26 @@ scale_max = 4.0
 color = Color(0.509804, 0.52549, 0.521569, 1)
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 collision_mask = 2
 script = ExtResource("1_o2sf4")
 
 [node name="Player3" type="Sprite2D" parent="."]
 texture_repeat = 3
-scale = Vector2(3, 3)
+scale = Vector2(5, 5)
 texture = ExtResource("1_o51ha")
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 130)
 
 [node name="Player" type="CollisionShape2D" parent="."]
-position = Vector2(-2.86102e-06, 3.5)
+position = Vector2(8, -3.99999)
 scale = Vector2(4.5, 4.5)
 shape = SubResource("RectangleShape2D_gsloy")
 
 [node name="smoke_effect" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_3ifi1")
-position = Vector2(38, 196)
+position = Vector2(66, 326)
+scale = Vector2(10, 10)
 amount = 50
 lifetime = 0.33
 speed_scale = 64.0
@@ -52,7 +53,7 @@ process_material = SubResource("ParticleProcessMaterial_6db3y")
 
 [node name="smoke_effect2" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_3ifi1")
-position = Vector2(-40, 196)
+position = Vector2(-68, 328)
 amount = 50
 lifetime = 0.33
 speed_scale = 64.0

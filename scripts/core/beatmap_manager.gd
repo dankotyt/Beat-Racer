@@ -7,7 +7,7 @@ var note_parent: Node
 var audio_player: AudioStreamPlayer2D
 
 # Добавляем предварительное объявление класса
-var ObstaclePool = preload("res://scripts(sp)/core/obstacle_pool.gd")
+var ObstaclePool = preload("res://scripts/core/obstacle_pool.gd")
 var obstacle_pool: ObstaclePool
 
 # Одиночка (Singleton)

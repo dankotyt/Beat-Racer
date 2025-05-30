@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://l283s7e5ugk8"]
+
+[ext_resource type="Script" uid="uid://clr4aj6r0tcdk" path="res://elements/obstacles/car_obstacle/bus_obstacle.gd" id="1_hy7n0"]
+[ext_resource type="Texture2D" uid="uid://cly74wx3gc6qd" path="res://assets/sprBusObstacle.png" id="2_ayj3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1x52"]
+size = Vector2(52, 133.667)
+
+[node name="Area2D2" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_hy7n0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("2_ayj3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.833336)
+shape = SubResource("RectangleShape2D_m1x52")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

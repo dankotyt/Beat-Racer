@@ -6,6 +6,7 @@ var texture_height: float
 var finish_spawned := false  # Чтобы не спавнилось дважды
 
 func _ready():
+	GameManager.stop_audio_and_bg()
 	var first_bg = get_child(0) as Sprite2D
 	texture_height = first_bg.texture.get_height()
 

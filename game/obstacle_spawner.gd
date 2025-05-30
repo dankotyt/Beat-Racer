@@ -8,19 +8,31 @@ var x_max := 1170
 const OBSTACLES = {
 	"easy": [
 		preload("res://elements/obstacles/spikes_obstacle/spikes_obstacle.tscn"),
+		preload("res://elements/obstacles/Rock_obstacle/rock_obstacle.tscn"),
 		preload("res://elements/obstacles/tree_obstacle/tree_obstacle_left.tscn"),
 		preload("res://elements/obstacles/tree_obstacle/tree_obstacle_right.tscn"),
+		preload("res://elements/obstacles/Police_car_obstacle/police_car.tscn")
 	],
 	"medium": [
 		preload("res://elements/obstacles/spikes_obstacle/spikes_obstacle.tscn"),
+		preload("res://elements/obstacles/Rock_obstacle/rock_obstacle.tscn"),
 		preload("res://elements/obstacles/tree_obstacle/tree_obstacle_left.tscn"),
 		preload("res://elements/obstacles/tree_obstacle/tree_obstacle_right.tscn"),
+		preload("res://elements/obstacles/Police_car_obstacle/police_car.tscn"),
+		preload("res://elements/obstacles/car_obstacle/car_obstacle_UAZ.tscn"),
+		preload("res://elements/obstacles/car_obstacle/car_obstacle_VAN.tscn"),
+		preload("res://elements/obstacles/car_obstacle/bus_obstacle.tscn")
 	],
 	"hard": [
 		preload("res://elements/obstacles/spikes_obstacle/spikes_obstacle.tscn"),
+		preload("res://elements/obstacles/Rock_obstacle/rock_obstacle.tscn"),
 		preload("res://elements/obstacles/tree_obstacle/tree_obstacle_left.tscn"),
 		preload("res://elements/obstacles/tree_obstacle/tree_obstacle_right.tscn"),
-		preload("res://elements/obstacles/car_obstacle/car_obstacle.tscn")
+		preload("res://elements/obstacles/car_obstacle/car_obstacle.tscn"),
+		preload("res://elements/obstacles/Police_car_obstacle/police_car.tscn"),
+		preload("res://elements/obstacles/car_obstacle/car_obstacle_UAZ.tscn"),
+		preload("res://elements/obstacles/car_obstacle/car_obstacle_VAN.tscn"),
+		preload("res://elements/obstacles/car_obstacle/bus_obstacle.tscn")
 	]
 }
 

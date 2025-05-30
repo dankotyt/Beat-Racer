@@ -4,24 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://dkjabh6dcx20d" path="res://assets/tree_obstacle.png" id="1_sgias"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s4de6"]
-radius = 42.0119
+radius = 57.0789
 
 [node name="TreeObstacleRight" type="Area2D"]
 physics_interpolation_mode = 1
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 7
 script = ExtResource("1_s4de6")
 
 [node name="tree" type="Sprite2D" parent="."]
-position = Vector2(41, 1)
+position = Vector2(53.75, -1.5)
 rotation = -1.5708
-scale = Vector2(0.031, 0.031)
+scale = Vector2(0.0422559, 0.0425618)
 texture = ExtResource("1_sgias")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(41, 1)
+position = Vector2(56.75, -3.25)
 shape = SubResource("CircleShape2D_s4de6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
