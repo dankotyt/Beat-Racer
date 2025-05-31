@@ -16,10 +16,10 @@ region_enabled = true
 region_rect = Rect2(-330, -200, 1920, 1080)
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = 534.0
-offset_top = 694.0
-offset_right = 901.0
-offset_bottom = 821.0
+offset_left = 317.0
+offset_top = 698.0
+offset_right = 684.0
+offset_bottom = 825.0
 size_flags_vertical = 3
 theme = ExtResource("3_54034")
 theme_override_fonts/font = ExtResource("4_3m6yr")
@@ -28,10 +28,10 @@ text = "menu
 "
 
 [node name="RerunButton" type="Button" parent="."]
-offset_left = 939.0
-offset_top = 700.0
-offset_right = 1304.0
-offset_bottom = 814.0
+offset_left = 730.0
+offset_top = 698.0
+offset_right = 1133.0
+offset_bottom = 824.0
 theme = ExtResource("3_54034")
 theme_override_fonts/font = ExtResource("4_3m6yr")
 theme_override_font_sizes/font_size = 72
