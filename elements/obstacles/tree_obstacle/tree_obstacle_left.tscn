@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkjabh6dcx20d" path="res://assets/tree_obstacle.png" id="1_qcmxr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_41f0x"]
-radius = 45.9167
+radius = 45.9166
 height = 91.8333
 
 [node name="tree_obstacle" type="Area2D"]

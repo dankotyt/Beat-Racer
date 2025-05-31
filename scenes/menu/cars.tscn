@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://0ogg1ilrkd3h"]
+[gd_scene load_steps=7 format=3 uid="uid://d2tubckv06tc1"]
 
 [ext_resource type="Texture2D" uid="uid://bcypwh13rcgyh" path="res://sprites/carOrange.png" id="1_7faph"]
 [ext_resource type="Texture2D" uid="uid://bf6ai206g8wye" path="res://sprites/carGreen.png" id="2_ci64k"]

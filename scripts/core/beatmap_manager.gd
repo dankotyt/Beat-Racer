@@ -188,9 +188,9 @@ func process_note_type(type: String, current_time: float):
 		var beat_time = beats[idx]
 		if current_time >= beat_time - 0.15:
 			match type:
-				"strong": trigger_flash(0.2)
-				"medium": trigger_flash(0.5)
-				"weak": trigger_flash(0.3)
+				"strong": trigger_flash(0.1)
+				"medium": trigger_flash(0.1)
+				"weak": trigger_flash(0.1)
 			note_state[type].idx += 1
 
 func process_hybrid_notes(current_time: float):
