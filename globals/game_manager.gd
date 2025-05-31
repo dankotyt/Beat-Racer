@@ -6,7 +6,7 @@ signal win
 enum GameState { PLAYING, GAME_OVER, WIN }
 
 var state: GameState = GameState.PLAYING
-var track_length: float = 60000.0  # длина трассы в пикселях
+var track_length: float = 57500.0  # длина трассы в пикселях
 var distance_traveled: float = 0.0
 var difficulty = "medium"  # "easy", "medium", "hard"
 
