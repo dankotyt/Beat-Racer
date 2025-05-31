@@ -16,10 +16,7 @@ func _process(delta):
 
 		time += delta
 
-		# Движение по Y
 		position.y += speed * delta
-
-		# Виляние по X с помощью синуса
 		position.x = base_x + sin(time * wiggle_frequency) * wiggle_amplitude
 
 		if position.y > 1500:
@@ -32,4 +29,4 @@ func _on_body_entered(body):
 
 
 func _on_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+	pass

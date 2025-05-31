@@ -1,21 +1,18 @@
 class_name BeatmapManager
 extends Node
 
-# Настройки
 var note_scene: PackedScene
 var note_parent: Node
 var audio_player: AudioStreamPlayer2D
 var flash_rect: ColorRect
 var flash_timer: Timer
 
-# Объявление пула препятствий
 var ObstaclePool = preload("res://scripts/core/obstacle_pool.gd")
 var obstacle_pool: ObstaclePool
 
-# Одиночка (Singleton)
+# Синглтон
 static var instance: BeatmapManager
 
-# Битмапа и данные по битам
 var beatmap: Dictionary
 var sec_per_beat: float
 var note_state = {
@@ -138,8 +135,6 @@ func start(beatmap_file: String):
 
 	set_process(true)
 
-# --- ВСПЫШКА ---
-
 func init_flash_observer():
 	flash_rect = ColorRect.new()
 	flash_rect.color = Color(1, 1, 1, 0)
@@ -162,7 +157,6 @@ func _on_flash_timeout():
 	var tween = create_tween()
 	tween.tween_property(flash_rect, "color:a", 0.0, 0.3)
 
-# --- ПРОЦЕССИНГ НОТ ---
 func _process(_delta):
 	if not audio_player or not audio_player.playing:
 		return

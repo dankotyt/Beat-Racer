@@ -1,4 +1,3 @@
-# elements/finish_line/finish_line.gd
 extends Area2D
 
 var speed := 500.0

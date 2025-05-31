@@ -1,19 +1,16 @@
 class_name ObstaclePool
 extends Node
 
-# Загружаем сцены препятствий (используем .tscn файлы!)
 const CAR_SCENE = preload("res://elements/obstacles/car_obstacle/car_obstacle.tscn")
 const SPIKES_SCENE = preload("res://elements/obstacles/spikes_obstacle/spikes_obstacle.tscn")
-const TREE_LEFT_SCENE = preload("res://elements/obstacles/tree_obstacle/tree_obstacle_left.tscn")  # Должен быть .tscn!
-const TREE_RIGHT_SCENE = preload("res://elements/obstacles/tree_obstacle/tree_obstacle_right.tscn")  # Должен быть .tscn!
+const TREE_LEFT_SCENE = preload("res://elements/obstacles/tree_obstacle/tree_obstacle_left.tscn")
+const TREE_RIGHT_SCENE = preload("res://elements/obstacles/tree_obstacle/tree_obstacle_right.tscn")
 
-# Пул для каждого типа препятствий
 var car_pool: Array = []
 var spikes_pool: Array = []
 var tree_left_pool: Array = []
 var tree_right_pool: Array = []
 
-# Интерфейс пула объектов для каждого типа препятствий
 func spawn_obstacle(type: String) -> Node2D:
 	match type:
 		"car":
@@ -48,7 +45,6 @@ func despawn_obstacle(obstacle: Node2D):
 	obstacle.hide()
 	obstacle.position = Vector2.ZERO
 	
-	# Определяем тип препятствия по имени сцены (альтернатива проверке типов)
 	var scene_name = obstacle.get_scene_file_path().get_file()
 	
 	if "car_obstacle" in scene_name:
@@ -63,7 +59,7 @@ func despawn_obstacle(obstacle: Node2D):
 		push_error("Unknown obstacle type in despawn: " + scene_name)
 		obstacle.queue_free()
 
-# Фабричный метод создания препятствий
+# Фабричный метод
 func create_new_obstacle(type: String) -> Node2D:
 	var obstacle: Node2D
 	

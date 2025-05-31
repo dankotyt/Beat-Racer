@@ -1,11 +1,9 @@
-# tree_obstacle.gd (используется для left и right)
 extends Area2D
 
 var speed := 500.0
 
 func _ready():
-	# Принудительно установить нужную позицию по X
-		position.x = 935
+	position.x = 935
 
 func _process(delta):
 	if GameManager.state != GameManager.GameState.PLAYING:
