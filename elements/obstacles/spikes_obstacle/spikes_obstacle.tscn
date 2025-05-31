@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bx77flqdkfwbv" path="res://elements/obstacles/spikes_obstacle/spikes_obstacle.gd" id="1_ml0gl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gcjm"]
-size = Vector2(37.3333, 11)
+size = Vector2(37.3333, 9)
 
 [node name="Area2D" type="Area2D"]
 scale = Vector2(3, 3)

@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7tmgw1hqxhng"]
+[gd_scene load_steps=5 format=3 uid="uid://c7tmgw1hqxhng"]
 
 [ext_resource type="Script" uid="uid://c0qx32vri8ln8" path="res://elements/obstacles/tree_obstacle/tree_obstacle_right.gd" id="1_s4de6"]
 [ext_resource type="Texture2D" uid="uid://dkjabh6dcx20d" path="res://assets/tree_obstacle.png" id="1_sgias"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s4de6"]
-radius = 51.9199
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4de6"]
+size = Vector2(65.3333, 15)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_631j3"]
+radius = 20.3333
+height = 62.6667
 
 [node name="TreeObstacleRight" type="Area2D"]
 physics_interpolation_mode = 1
@@ -19,9 +23,12 @@ rotation = -1.5708
 scale = Vector2(0.0422559, 0.0425618)
 texture = ExtResource("1_sgias")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-physics_interpolation_mode = 1
-position = Vector2(56.75, -3.25)
-shape = SubResource("CircleShape2D_s4de6")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(76.6667, -3.33333)
+shape = SubResource("RectangleShape2D_s4de6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(40.6667, -2)
+shape = SubResource("CapsuleShape2D_631j3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4g8lciwxf4rl"]
+[gd_scene load_steps=5 format=3 uid="uid://d4g8lciwxf4rl"]
 
 [ext_resource type="Script" uid="uid://baenjcvwx6jp1" path="res://elements/obstacles/tree_obstacle/tree_obstacle_left.gd" id="1_3yk0b"]
 [ext_resource type="Texture2D" uid="uid://dkjabh6dcx20d" path="res://assets/tree_obstacle.png" id="1_qcmxr"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yk0b"]
+size = Vector2(65.3333, 15)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_41f0x"]
-radius = 45.9166
-height = 91.8333
+radius = 20.3333
+height = 62.6667
 
 [node name="tree_obstacle" type="Area2D"]
 scale = Vector2(3, 3)
@@ -19,8 +22,12 @@ rotation = 1.57152
 scale = Vector2(0.0412981, 0.0391987)
 texture = ExtResource("1_qcmxr")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(46, 12.8333)
+shape = SubResource("RectangleShape2D_3yk0b")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(60, 11.75)
+position = Vector2(75, 11)
 shape = SubResource("CapsuleShape2D_41f0x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
